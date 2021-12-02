@@ -1,0 +1,25 @@
+.logo {
+  height: 50px;
+  p {
+    font-family: "GimpScribble";
+    font-size: 2rem;
+    margin: 20px;
+  }
+}
+
+.spelregels {
+  height: 30px;
+}
+
+#spelregels {
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  font-family: "Charter";
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+main {
+  height: calc(100vh - 200px);
+}
