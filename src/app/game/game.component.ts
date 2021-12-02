@@ -25,6 +25,7 @@ export class GameComponent implements OnInit {
   };
 
   player?: string;
+  dataLoaded: boolean = false;
 
   constructor(
     private lobbyService: LobbyService,
@@ -48,7 +49,7 @@ export class GameComponent implements OnInit {
               .startGame(this.lobby.lobbyCode)
               .subscribe((result) => {
                 this.game = result;
-                console.log(this.game);
+                this.dataLoaded = true;
               });
           });
       },
