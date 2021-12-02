@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Game } from './game';
+import { GuessResponse } from './guess-response';
 
 @Injectable({
   providedIn: 'root',
@@ -38,11 +39,11 @@ export class GameService {
     location: string,
     weapon: string,
     murderer: string
-  ): Observable<Game> {
+  ): Observable<GuessResponse> {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
 
-    return this.httpClient.post<Game>(
+    return this.httpClient.post<GuessResponse>(
       this.apiURL + '/game/' + code + '/guess',
       { location: location, weapon: weapon, murderer: murderer },
       { headers: headers }

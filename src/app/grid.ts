@@ -1,8 +1,9 @@
-import { Clue } from "./clue";
-import { Solution } from "./solution";
+import { Clue } from './clue';
+import { GridClue } from './grid-clue';
+import { Solution } from './solution';
 
 export interface Grid {
   id: string;
-  clues: Clue[];
+  clues: GridClue[];
   solution: Solution[];
 }

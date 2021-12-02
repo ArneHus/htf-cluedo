@@ -1,0 +1,65 @@
+<div *ngIf="!over">
+  <p id="timer" class="text-center">00:{{ timeLeft }}</p>
+  <div id="board">
+    <div class="row">
+      <div class="col-4">
+        <p class="gamecard">{{ game.data.grids[game.round].clues[0].text }}</p>
+      </div>
+      <div class="col-4">
+        <p class="gamecard">{{ game.data.grids[game.round].clues[1].text }}</p>
+      </div>
+      <div class="col-4">
+        <p class="gamecard">{{ game.data.grids[game.round].clues[2].text }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <p class="gamecard">{{ game.data.grids[game.round].clues[3].text }}</p>
+      </div>
+      <div class="col-4">
+        <p class="gamecard">{{ game.data.grids[game.round].clues[4].text }}</p>
+      </div>
+      <div class="col-4">
+        <p class="gamecard">{{ game.data.grids[game.round].clues[5].text }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <p class="gamecard">{{ game.data.grids[game.round].clues[6].text }}</p>
+      </div>
+      <div class="col-4">
+        <p class="gamecard">{{ game.data.grids[game.round].clues[7].text }}</p>
+      </div>
+      <div class="col-4">
+        <p class="gamecard">{{ game.data.grids[game.round].clues[8].text }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="over" class="center">
+  <h3>Wie verdacht je, met welk wapen en op welke locatie?</h3>
+  <form (ngSubmit)="onSubmit()" [formGroup]="gridForm">
+    <div class="form-group">
+      <select name="murderer" id="murderer" formControlName="murderer">
+        <option value="" disabled selected>Moordenaar</option>
+        <option *ngFor="let clue of murderers" [value]="clue">
+          {{ clue }}
+        </option>
+      </select>
+      <select name="weapon" id="weapon" formControlName="weapon">
+        <option value="" disabled selected>Wapen</option>
+        <option *ngFor="let clue of weapons" [value]="clue">
+          {{ clue }}
+        </option>
+      </select>
+      <select name="location" id="location" formControlName="location">
+        <option value="" disabled selected>Locatie</option>
+        <option *ngFor="let clue of locations" [value]="clue">
+          {{ clue }}
+        </option>
+      </select>
+    </div>
+    <button type="submit">Verstuur</button>
+  </form>
+</div>
