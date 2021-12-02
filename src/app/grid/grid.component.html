@@ -1,5 +1,10 @@
 <div *ngIf="!over">
-  <p id="timer" class="text-center">00:{{ timeLeft }}</p>
+  <div class="mb-5">
+      <p id="timer" class="text-center" *ngIf="timeLeft >= 10">0:{{ timeLeft }} </p>
+      <p id="timer" class="text-center" *ngIf="timeLeft < 10">0:0{{ timeLeft }} </p>
+      <button class="btn btn-danger" (click)="toggleDone()">Skip timer</button>
+  </div>
+
   <div id="board">
     <div class="row">
       <div class="col-4">
@@ -41,25 +46,28 @@
   <h3>Wie verdacht je, met welk wapen en op welke locatie?</h3>
   <form (ngSubmit)="onSubmit()" [formGroup]="gridForm">
     <div class="form-group">
-      <select name="murderer" id="murderer" formControlName="murderer">
+      <select name="murderer" id="murderer" formControlName="murderer" class="my-5">
         <option value="" disabled selected>Moordenaar</option>
         <option *ngFor="let clue of murderers" [value]="clue">
           {{ clue }}
         </option>
       </select>
-      <select name="weapon" id="weapon" formControlName="weapon">
+      <select name="weapon" id="weapon" formControlName="weapon" class="mb-5">
         <option value="" disabled selected>Wapen</option>
         <option *ngFor="let clue of weapons" [value]="clue">
           {{ clue }}
         </option>
       </select>
-      <select name="location" id="location" formControlName="location">
+      <select name="location" id="location" formControlName="location" class="mb-5">
         <option value="" disabled selected>Locatie</option>
         <option *ngFor="let clue of locations" [value]="clue">
           {{ clue }}
         </option>
       </select>
     </div>
-    <button type="submit">Verstuur</button>
+    <div class="text-center">
+      <button type="submit" class="submitButton">Verstuur</button>
+    </div>
+
   </form>
 </div>

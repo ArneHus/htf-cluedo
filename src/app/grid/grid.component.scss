@@ -5,7 +5,29 @@
 }
 
 #timer {
-  background-color: red;
+  background-color: #df4759;
   color: white;
   width: 50px;
+  border-radius: 5px;
+}
+
+select {
+  background-color: transparent;
+  border: 0px solid #000;
+  display: block;
+  width: 250px;
+  margin: auto;
+  margin-bottom: 25px;
+  background-image: url("../../assets/img/underline.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: auto;
+}
+
+.submitButton {
+  background: transparent;
+  border: 1px solid black;
+  padding: 15px 60px 15px 60px;
+  font-size: 20px;
+  font-family: "Charter", sans-serif;
 }
