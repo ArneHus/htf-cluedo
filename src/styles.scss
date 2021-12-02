@@ -7,3 +7,14 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
 //custom code/partials
+
+body {
+  background-color: #e7e7e7;
+}
+.mat-dialog-container {
+  padding: 0 !important;
+}
+
+.mat-dialog-content {
+  padding: 0 !important;
+}

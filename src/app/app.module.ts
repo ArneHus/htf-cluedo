@@ -9,14 +9,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateLobbyComponent } from './create-lobby/create-lobby.component';
 
+import { MatDialogModule } from '@angular/material/dialog';
+import { RulesComponent } from './rules/rules.component';
+
 @NgModule({
-  declarations: [AppComponent, LandingComponent, CreateLobbyComponent],
+
+  declarations: [
+    AppComponent,
+    LandingComponent,
+    RulesComponent,
+    CreateLobbyComponent,
+  ],
   imports: [
     BrowserModule,
     CommonModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],
