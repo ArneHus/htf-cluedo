@@ -102,4 +102,8 @@ export class GridComponent implements OnInit {
   pauseTimer() {
     clearInterval(this.interval);
   }
+
+  toggleDone() {
+    this.over = true
+  }
 }
