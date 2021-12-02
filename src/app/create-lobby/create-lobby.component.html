@@ -1,0 +1,21 @@
+<div *ngIf="lobby">
+  <p>
+    Pin: {{lobby.lobbyCode}}
+  </p>
+  <div>
+    <p>Players: </p>
+    <div class="row">
+      <p *ngFor="let player of lobby.players" class="col-md-4">
+        {{player}}
+      </p>
+      <p>You are: {{player}}</p>
+    </div>
+
+  </div>
+  <button>START GAME</button>
+</div>
+<!-- <div *ngIf="lobby == null">
+  <p>
+    It appears the creation of the lobby failed. Please try again.
+  </p>
+</div> -->
