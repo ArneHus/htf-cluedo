@@ -11,6 +11,7 @@ import { CreateLobbyComponent } from './create-lobby/create-lobby.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { RulesComponent } from './rules/rules.component';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
 
@@ -19,6 +20,7 @@ import { RulesComponent } from './rules/rules.component';
     LandingComponent,
     RulesComponent,
     CreateLobbyComponent,
+    GameComponent,
   ],
   imports: [
     BrowserModule,
