@@ -1,1 +1,32 @@
-<p>clues works!</p>
+<div class="row" id="clues">
+  <div class="col-4">
+    <div *ngFor="let location of locations" >
+      <p *ngIf="!location.isCrossed" (click)="toggleCrossed('location', location)">
+        {{location.name}}
+      </p>
+      <p *ngIf="location.isCrossed" (click)="toggleCrossed('location', location)" class="crossed">
+        {{location.name}}
+      </p>
+    </div>
+  </div>
+  <div class="col-4">
+    <div *ngFor="let weapon of weapons" >
+      <p *ngIf="!weapon.isCrossed" (click)="toggleCrossed('weapon', weapon)">
+        {{weapon.name}}
+      </p>
+      <p *ngIf="weapon.isCrossed" (click)="toggleCrossed('weapon', weapon)" class="crossed">
+        {{weapon.name}}
+      </p>
+    </div>
+  </div>
+  <div class="col-4">
+    <div *ngFor="let suspect of suspects" >
+      <p *ngIf="!suspect.isCrossed" (click)="toggleCrossed('suspect', suspect)">
+        {{suspect.name}}
+      </p>
+      <p *ngIf="suspect.isCrossed" (click)="toggleCrossed('suspect', suspect)" class="crossed">
+        {{suspect.name}}
+      </p>
+    </div>
+  </div>
+</div>
