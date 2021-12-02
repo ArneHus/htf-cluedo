@@ -1,1 +1,4 @@
-<p>game works!</p>
+<app-clues [game]="game" *ngIf="dataLoaded"></app-clues>
+<p *ngIf="!dataLoaded">
+  Waiting for data.
+</p>
