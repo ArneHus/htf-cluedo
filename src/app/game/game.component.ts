@@ -58,6 +58,7 @@ export class GameComponent implements OnInit {
               .startGame(this.lobby.lobbyCode)
               .subscribe((result) => {
                 this.game = result;
+                this.game.data.clues = this.shuffle(this.game.data.clues);
                 this.dataLoaded = true;
               });
           });
@@ -67,5 +68,25 @@ export class GameComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  shuffle(array: any) {
+    let currentIndex = array.length,
+      randomIndex;
+
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+
+    return array;
   }
 }

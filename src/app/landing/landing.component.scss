@@ -1,0 +1,37 @@
+.center {
+  max-width: 60%;
+  margin: auto;
+  margin-top: 3rem;
+  h1 {
+    text-align: center;
+    font-family: "GimpScribble";
+    background-image: url("../../assets/img/title_mask.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: center;
+    margin-bottom: 2rem;
+  }
+  p {
+    text-align: center;
+    font-size: 20px;
+    mark {
+      background-color: black;
+      color: white;
+      font-family: "Chalter";
+    }
+  }
+
+  a {
+    display: block;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    border-radius: 2px;
+    width: 200px;
+    font-size: 25px;
+    font-family: "Chalter";
+    text-align: center;
+    margin: auto;
+    margin-top: 2rem;
+  }
+}
