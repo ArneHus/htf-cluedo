@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Data } from '../data';
 import { Game } from '../game';
 import { GameService } from '../game.service';
 import { Lobby } from '../lobby';
@@ -17,11 +18,19 @@ export class GameComponent implements OnInit {
     players: [],
   };
 
-  game: Game = {
+  clues = [];
+  grids = [];
+
+  data: Data = {
+    clues: this.clues,
+    grids: this.grids,
+  };
+
+  @Input() game: Game = {
     state: '',
     round: 0,
     activePlayerId: '',
-    data: {},
+    data: this.data,
   };
 
   player?: string;

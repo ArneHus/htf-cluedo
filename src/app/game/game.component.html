@@ -1,4 +1,10 @@
-<app-clues [game]="game" *ngIf="dataLoaded"></app-clues>
-<p *ngIf="!dataLoaded">
-  Waiting for data.
-</p>
+<div class="row">
+  <div class="col-6">
+    <app-grid [game]="game" [code]="lobby.lobbyCode" *ngIf="dataLoaded"></app-grid>
+  </div>
+  <div class="col-6">
+    <app-clues [game]="game" *ngIf="dataLoaded"></app-clues>
+  </div>
+</div>
+
+<p *ngIf="!dataLoaded">Waiting for data.</p>

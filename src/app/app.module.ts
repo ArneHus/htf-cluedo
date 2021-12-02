@@ -13,9 +13,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { RulesComponent } from './rules/rules.component';
 import { GameComponent } from './game/game.component';
 import { CluesComponent } from './clues/clues.component';
+import { GridComponent } from './grid/grid.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-
   declarations: [
     AppComponent,
     LandingComponent,
@@ -23,6 +24,7 @@ import { CluesComponent } from './clues/clues.component';
     CreateLobbyComponent,
     GameComponent,
     CluesComponent,
+    GridComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,9 @@ import { CluesComponent } from './clues/clues.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
