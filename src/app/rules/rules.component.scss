@@ -1,0 +1,52 @@
+.cdk-overlay-pane.my-dialog {
+  position: relative !important;
+}
+
+.close {
+  position: absolute;
+  top: 20px !important;
+  right: 20px !important;
+  line-height: 14px;
+  min-width: auto;
+  display: block;
+  z-index: 999;
+}
+
+.rulesDialog {
+  position: relative;
+
+  font-family: "Charter";
+
+  &:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-image: url("../../assets/img/grid.png");
+    background-repeat: repeat;
+    background-position: 50% 0;
+    background-size: auto;
+  }
+
+  .dialog-bg {
+    position: absolute;
+    opacity: 0.5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .dialog-content {
+    padding: 20px;
+    position: relative;
+
+    h2 {
+      margin-bottom: 30px;
+    }
+  }
+}
